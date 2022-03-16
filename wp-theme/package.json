@@ -1,0 +1,26 @@
+{
+  "name": "wp-theme",
+  "version": "1.0.0",
+  "description": "Tailwind Starter for Wordpress",
+  "scripts": {
+    "dev": "TAILWIND_MODE=watch mix watch",
+    "build": "mix --production",
+    "zip": "zip -r ./dist.zip * -x  assets/\\* dist/\\* node_modules/\\*  *.DS_Store* dist.zip README.md package-lock.json package.json postcss.config.js tailwind.config.js webpack.mix.js mix-manifest.json",
+    "unzip": "rm -Rf dist && unzip -qq -o dist.zip -d dist",
+    "build::prod": "npm run build && npm run zip && npm run unzip"
+  },
+  "author": "Gerhard",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.3",
+    "browser-sync": "^2.27.9",
+    "browser-sync-webpack-plugin": "^2.3.0",
+    "cross-env": "^7.0.3",
+    "glob": "^7.2.0",
+    "laravel-mix": "^6.0.43",
+    "postcss": "^8.4.11"
+  },
+  "dependencies": {
+    "tailwindcss": "^3.0.23"
+  }
+}

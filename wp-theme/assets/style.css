@@ -1,0 +1,164 @@
+/*!
+Theme Name: My theme
+Theme URI: http://metabits.no
+Author: Metabits
+Author URI: http://metabits.no/
+Description: Custom theme for my page
+Version: 1.0
+Text Domain: metabits-theme
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  font-family: 'Abril Fatface';
+  font-weight: 400;
+  font-style: normal;
+  src: url('./fonts/AbrilFatface-Regular.woff2') format('woff2'), url('./fonts/AbrilFatface-Regular.woff') format('woff');
+}
+
+body {
+  --body-offset:  0px;
+}
+body.admin-bar {
+  --body-offset:  32px;
+}
+@media screen and (max-width: 782px) {
+  body.admin-bar {
+    --body-offset:  46px;
+  }
+}
+
+/* Base */
+
+h1:not(.custom, .h2, .h3), .h1, .page-title {
+  @apply text-5xl font-bold font-serif;
+}
+h2:not(.custom,.h1,.h3), .h2 {
+  @apply text-2xl font-bold mb-2;
+}
+h3:not(.custom), .h3 {
+  @apply text-xl font-bold mb-2;
+}
+p:not(.custom) {
+  @apply mb-4;
+}
+ul,
+ol {
+  @apply ml-6;
+}
+ul {
+  @apply list-disc;
+}
+ol {
+  @apply list-decimal;
+}
+p:not(.custom) a {
+  @apply underline hover:text-primary;
+}
+.markup > *:not(div) {
+  @apply max-w-2xl mb-8;
+}
+.markup h2,
+.markup h3,
+.markup h4 {
+  @apply text-xl mb-2 font-bold;
+}
+.wp-block-separator {
+  @apply border-primary my-8;
+}
+.markup img {
+  @apply block mb-6;
+}
+.wp-block-quote {
+  @apply mb-6 border-l-2 border-primary px-4 py-2;
+}
+.wp-block-quote p {
+  @apply mb-2;
+}
+.wp-block-quote cite {
+  @apply font-medium text-primary text-sm uppercase;
+}
+.wp-block-image {
+  @apply mb-6;
+}
+.wp-block-image img {
+  @apply mx-auto;
+}
+.wp-block-columns {
+  @apply mb-4;
+}
+.wp-block-image figcaption {
+  @apply -mt-2 text-base font-medium text-center mb-0;
+}
+.wp-block-media-text .wp-block-media-text__content {
+  @apply p-0 sm:pl-6 md:pl-8;
+}
+.wp-block-media-text.has-media-on-the-right .wp-block-media-text__content {
+  @apply p-0 sm:pr-6 md:pr-8;
+}
+
+/* svg icons */
+.svg-inline--fa {
+  height: 1em;
+  width: 1em;
+  margin: 0;
+}
+
+/* Layout */
+.content-wrapper {
+  @apply mx-auto w-full max-w-6xl px-4;
+}
+
+/* Desktop menu */
+.main-nav ul {
+  @apply flex items-center gap-4 list-none m-0;
+}
+.main-nav a {
+  @apply block p-1;
+}
+.main-nav a:hover,
+.main-nav .current_page_item a,
+.main-nav .current-menu-item a,
+.main-nav a.active {
+  @apply underline;
+}
+
+/* Post nav */
+.post-nav span,
+.post-nav a {
+  @apply inline-block px-1;
+}
+.post-nav span {
+  @apply underline;
+}
+.post-nav a {
+  @apply hover:underline;
+}
+
+/* Mobile menu */
+.mobile-nav ul {
+  @apply list-none m-0;
+}
+.mobile-nav a {
+  @apply block mb-2;
+}
+.mobile-nav a:hover,
+.mobile-nav .current_page_item a,
+.mobile-nav .current-menu-item a,
+.mobile-nav a.active {
+  @apply underline;
+}
+
+/* Mobile overlay */
+.show-nav .mobile-overlay {
+  @apply block lg:hidden;
+}
+
+/* btn */
+.btn {
+  @apply bg-primary text-white px-4 py-2 rounded-full inline-flex items-center;
+}
+

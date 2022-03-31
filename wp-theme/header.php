@@ -34,5 +34,6 @@
     </nav>
   </div>
 </aside>
+<button onclick="document.getElementById('body').classList.toggle('show-nav')" style="top: var(--body-offset)" class="mobile-overlay  left-0 w-full bottom-0 fixed hidden"></button>
 <main>
   

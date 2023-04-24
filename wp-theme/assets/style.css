@@ -20,28 +20,40 @@ Text Domain: metabits-theme
     src: url('./fonts/AbrilFatface-Regular.woff2') format('woff2'), url('./fonts/AbrilFatface-Regular.woff') format('woff');
   }
 }
-
-body {
-  --body-offset:  0px;
+:root {
+  --content-inset: theme("spacing.4");
+  --content-max: 1120px;
+  --body-offset: 0px;
+}
+[hidden] {
+  @apply !hidden;
+}
+@media screen and (min-width: 1120px) {
+  body {
+    @apply [--content-inset:max(calc(50vw-(var(--content-max)/2)),1rem)];
+  }
 }
 body.admin-bar {
-  --body-offset:  32px;
+  --body-offset: 32px;
 }
 @media screen and (max-width: 782px) {
   body.admin-bar {
-    --body-offset:  46px;
+    --body-offset: 46px;
   }
 }
 
 /* Base */
-
-h1:not(.custom, .h2, .h3), .h1, .page-title {
-  @apply text-5xl font-bold font-serif;
+h1:not(.custom, .h2, .h3),
+.h1,
+.page-title {
+  @apply text-5xl font-bold;
 }
-h2:not(.custom,.h1,.h3), .h2 {
+h2:not(.custom, .h1, .h3),
+.h2 {
   @apply text-2xl font-bold mb-2;
 }
-h3:not(.custom), .h3 {
+h3:not(.custom),
+.h3 {
   @apply text-xl font-bold mb-2;
 }
 p:not(.custom) {
@@ -102,30 +114,55 @@ p:not(.custom) a {
   @apply p-0 sm:pr-6 md:pr-8;
 }
 
-/* svg icons */
-.svg-inline--fa {
-  height: 1em;
-  width: 1em;
-  margin: 0;
+@layer components {
+  /* svg icons */
+  .svg-inline--fa {
+    height: 1em;
+    width: 1em;
+    margin: 0;
+  }
+  /* Layout */
+  .content-wrapper {
+    @apply mx-auto w-full px-[var(--content-inset)];
+  }
+  /* btn */
+  .btn {
+    @apply bg-primary text-white px-4 py-2 rounded-full inline-flex items-center;
+  }
 }
 
-/* Layout */
-.content-wrapper {
-  @apply mx-auto w-full max-w-6xl px-4;
+/* Menus - reset nesting */
+.main-nav > div,
+.main-nav ul,
+.main-nav li,
+.mobile-nav > div,
+.mobile-nav ul,
+.mobile-nav li {
+  @apply contents;
 }
-
 /* Desktop menu */
-.main-nav ul {
-  @apply flex items-center gap-4 list-none m-0;
-}
 .main-nav a {
-  @apply block p-1;
+  @apply block;
 }
 .main-nav a:hover,
 .main-nav .current_page_item a,
 .main-nav .current-menu-item a,
 .main-nav a.active {
   @apply underline;
+}
+/* Mobile menu */
+.mobile-nav a {
+  @apply block mb-2;
+}
+.mobile-nav a:hover,
+.mobile-nav .current_page_item a,
+.mobile-nav .current-menu-item a,
+.mobile-nav a.active {
+  @apply underline;
+}
+/* Lock body scrol */
+body:has(dialog[open]) {
+  @apply overflow-hidden;
 }
 
 /* Post nav */
@@ -139,28 +176,3 @@ p:not(.custom) a {
 .post-nav a {
   @apply hover:underline;
 }
-
-/* Mobile menu */
-.mobile-nav ul {
-  @apply list-none m-0;
-}
-.mobile-nav a {
-  @apply block mb-2;
-}
-.mobile-nav a:hover,
-.mobile-nav .current_page_item a,
-.mobile-nav .current-menu-item a,
-.mobile-nav a.active {
-  @apply underline;
-}
-
-/* Mobile overlay */
-.show-nav .mobile-overlay {
-  @apply block lg:hidden;
-}
-
-/* btn */
-.btn {
-  @apply bg-primary text-white px-4 py-2 rounded-full inline-flex items-center;
-}
-

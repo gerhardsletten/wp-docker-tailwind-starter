@@ -6,7 +6,7 @@ services:
     container_name: "wp-docker-starter-db"
     volumes:
       - db_data:/var/lib/mysql
-    restart: always
+    restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD: somewordpress
       MYSQL_DATABASE: wordpress

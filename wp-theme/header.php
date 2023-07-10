@@ -16,7 +16,7 @@
 <header class="py-4 lg:py-8 bg-slate-200 mb-4">
   <div class="content-wrapper">
     <div class="flex items-center justify-between">
-      <a href="/" class="w-44 lg:w-64" aria-label="<?php echo get_bloginfo(
+      <a href="<?php echo home_url( '/' ); ?>" class="w-44 lg:w-64" aria-label="<?php echo get_bloginfo(
         "name"
       ); ?>">
         <?php get_template_part("parts/logo"); ?>

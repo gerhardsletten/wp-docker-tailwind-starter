@@ -16,6 +16,9 @@ if ($bundle_hash) {
   $version_hash = $bundle_hash;
 }
 
+/* ClassNames utiltiy */
+require_once "includes/classnames.php";
+
 /* Remove width/height svg */
 function wpse240579_fix_svg_size_attributes($out, $id)
 {

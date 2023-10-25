@@ -484,7 +484,6 @@ remove_action("wp_head", "wp_generator"); // Display the XHTML generator that is
 remove_action("wp_head", "adjacent_posts_rel_link_wp_head", 10, 0);
 remove_action("wp_head", "rel_canonical");
 remove_action("wp_head", "wp_shortlink_wp_head", 10, 0); // Add Filters
-add_filter("avatar_defaults", "html5blankgravatar"); // Custom Gravatar in Settings > Discussion
 add_filter("body_class", "add_slug_to_body_class"); // Add slug to body class (Starkers build)
 add_filter("widget_text", "do_shortcode"); // Allow shortcodes in Dynamic Sidebar
 add_filter("widget_text", "shortcode_unautop");

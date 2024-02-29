@@ -12,7 +12,7 @@
     "markdown"
   ],
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "prettier.prettierPath": "./node_modules/prettier",
+  "prettier.prettierPath": "./node_modules/prettier/index.cjs",
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },

@@ -3,9 +3,9 @@
     <div class="mb-2">
       <?php if (has_post_thumbnail()): ?>
         <?php the_post_thumbnail("medium", [
-          "class" => "block w-full aspect-video",
-          "loading" => $args["first"] ? "eager" : "lazy",
-          "sizes" => "(max-width: 767px) 90vw, (max-width: 1024px) 45vw",
+            "class" => "block w-full aspect-video",
+            "loading" => $args["first"] ? "eager" : "lazy",
+            "sizes" => "(max-width: 767px) 90vw, (max-width: 1024px) 45vw",
         ]); ?>
       <?php else: ?>
         <div class="bg-primary aspect-video"></div>

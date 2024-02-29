@@ -1,15 +1,15 @@
 <?php get_header(); ?>
   <?php if (have_posts()):
-    while (have_posts()):
-      the_post(); ?>
+      while (have_posts()):
+          the_post(); ?>
     <article id="post-<?php the_ID(); ?>" <?php post_class(
-  "content-wrapper"
+    "content-wrapper"
 ); ?>>
       <?php if (has_post_thumbnail()):// Check if Thumbnail exists
-         ?>
+           ?>
         <div class="mb-6">
           <?php the_post_thumbnail("large", [
-            "class" => "block w-full aspect-video",
+              "class" => "block w-full aspect-video",
           ]); ?>
         </div>
       <?php endif; ?>
@@ -21,6 +21,6 @@
       </div>
     </article>
   <?php
-    endwhile;
+      endwhile;
   endif; ?>
 <?php get_footer(); ?>

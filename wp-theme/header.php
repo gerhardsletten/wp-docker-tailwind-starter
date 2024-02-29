@@ -5,7 +5,7 @@
     <title><?php
     wp_title("");
     if (wp_title("", false)) {
-      echo " :";
+        echo " :";
     }
     ?> <?php bloginfo("name"); ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,12 +13,14 @@
     <?php wp_head(); ?>
   </head>
 <body <?php body_class("text-xl h-full"); ?> id="body">
-<header class="py-4 lg:py-8 bg-slate-200 mb-4">
+<header class="py-6 mb-4 bg-slate-100">
   <div class="content-wrapper">
     <div class="flex items-center justify-between">
-      <a href="<?php echo home_url( '/' ); ?>" class="w-44 lg:w-64" aria-label="<?php echo get_bloginfo(
-        "name"
-      ); ?>">
+      <a href="<?php echo home_url(
+          "/"
+      ); ?>" class="w-44 lg:w-64 text-2xl font-bold" aria-label="<?php echo get_bloginfo(
+    "name"
+); ?>">
         <?php get_template_part("parts/logo"); ?>
       </a>
       <button onclick="document.querySelector('#mobileMenu').showModal()" class="lg:hidden text-primary p-2" aria-label="Vis navigasjon">

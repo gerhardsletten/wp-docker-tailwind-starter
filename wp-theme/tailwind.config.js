@@ -1,15 +1,12 @@
-const glob = require("glob");
+import glob from "glob";
 
-module.exports = {
+export default {
   mode: "jit",
   content: ["./assets/**/*.js"].concat(glob.sync("./**/*.php")),
   theme: {
     extend: {
       colors: {
         primary: "rgb(30 41 59)",
-      },
-      fontFamily: {
-        sans: ["Noto Sans", "serif"],
       },
       keyframes: {
         slideright: {
